@@ -11,6 +11,8 @@ const calledPromise = async (setValue: React.Dispatch<React.SetStateAction<{ com
 };
 
 export default function Home() {
+
+
   const [value, setValue] = useState({ complete: false });
 
   // si muestra el valor optmista siempre y cuando el valor del estado no haya cambiado, si el estado cambia, el valor optimista se resetea al nuevo valor del estado
@@ -39,9 +41,10 @@ export default function Home() {
         await calledPromise(setValue); //  forzamos error
 
         console.log("SERVER OK");
-      } catch {
-        // console.log("CATCH ENTER");
-        // console.log("closure in catch:", optimistic.complete);
+      } catch (error) {
+        console.log("CATCH ENTER");
+        console.log("error:", error);
+        console.log("closure in catch:", optimistic.complete);
 
         // const rollbackValue = !optimistic.complete;
         // console.log("CATCH → passing value:", rollbackValue);
