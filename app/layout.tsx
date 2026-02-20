@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import  prisma from "@/lib/prisma";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +23,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const users = await prisma.user.findMany();
-  console.log("Users:", users);
 
   return (
     <html lang="en"  suppressHydrationWarning>
