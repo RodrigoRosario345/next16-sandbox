@@ -40,7 +40,7 @@ export function UserProfileButton({
                 ) : (
                     <FaRegUserCircle className="text-4xl text-gray-400" />
                 )}
-                <p className="text-gray-300">{name || "Guest"}!</p>
+                <p className="text-gray-300">{name || "Guest"}</p>
                 {!isOpen ? (
                     <IoIosArrowDown className="text-gray-300" />
                 ) : (
