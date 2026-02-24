@@ -7,13 +7,13 @@ const Options_UserProfile = [
     {
         label: "Profile",
         icon: <FaUser />,
-        href: "/profile",
+        href: "/dashboard/profile",
 
     },
     {
         label: "Settings",
         icon: <IoSettings />,
-        href: "/settings",
+        href: "/dashboard/settings",
     }
 ] as const;
 
