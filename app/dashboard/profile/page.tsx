@@ -23,11 +23,10 @@ const ProfilePage = () => {
     }
 
     return (
-        <div className="bg-gray-800 m-6 p-6 rounded-lg text-white space-y-4">
+        <div className="bg-gray-800 m-6 p-6 text-white space-y-4">
             <h1 className="text-xl font-bold">Profile Information</h1>
             {session.user ? (
                 <div className="flex items-center gap-4">
-
                     {session.user.image ? (
                         <Image
                             src={session.user.image}

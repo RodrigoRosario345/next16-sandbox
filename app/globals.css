@@ -10,6 +10,31 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-dropdown-forw: dropdown-forw 0.4s ease forwards;
+  --animate-dropdown-backw: dropdown-backw 0.4s ease forwards;
+
+  @keyframes dropdown-forw {
+    from {
+      opacity: 0;
+      transform: translateY(calc(-100% - 48px));
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes dropdown-backw {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(calc(-100% - 48px));
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
