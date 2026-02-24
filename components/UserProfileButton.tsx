@@ -17,16 +17,16 @@ export function UserProfileButton({
     email,
     image,
 }: UserProfileButtonProps) {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean | null>(null);
 
     const handleToggleDropdown = () => {
         setIsOpen((prev) => !prev);
     };
 
     return (
-        <div className="relative">
+        <div className="relative inset-0">
             <button
-                className="flex items-center space-x-2 p-2 rounded hover:bg-gray-700 cursor-pointer"
+                className="bg-gray-800 relative z-20 flex items-center space-x-2 p-2  hover:bg-gray-700 cursor-pointer"
                 onClick={handleToggleDropdown}
             >
                 {image ? (
@@ -47,7 +47,7 @@ export function UserProfileButton({
                     <IoIosArrowUp className="text-gray-300" />
                 )}
             </button>
-            {isOpen && <UserProfileDropdown />}
+            <UserProfileDropdown isOpen={isOpen} />
         </div>
     );
 }
