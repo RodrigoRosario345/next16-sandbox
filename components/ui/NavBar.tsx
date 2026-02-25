@@ -1,9 +1,10 @@
 import { getServerSession } from "next-auth";
 import { UserProfileButton } from "../UserProfileButton";
 import Link from "next/link";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export async function NavBar() {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     return (
         <nav className="bg-gray-800 px-4 flex justify-between items-center">
