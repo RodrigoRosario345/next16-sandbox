@@ -41,6 +41,12 @@ const ProfilePage = () => {
                     <div>
                         <p className="font-semibold">{session.user.name}</p>
                         <p className="text-sm text-gray-300">{session.user.email}</p>
+                        <p className="text-sm text-gray-300">
+                            {
+                            session.user.roles.map((role) => role[0].toUpperCase() + role.slice(1)).join(", ")
+                            }
+
+                        </p>
                     </div>
                 </div>
             ) : (
